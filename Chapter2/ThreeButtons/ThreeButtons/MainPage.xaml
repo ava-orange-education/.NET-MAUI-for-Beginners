@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThreeButtons.MainPage">
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout Padding="8">
+            <Button ClassId="button1" Text="Button 1" Clicked="Button_OnClicked" Margin="8,0"/>
+            <Button ClassId="button2" Text="Button 2" Clicked="Button_OnClicked" Margin="8,0"/>
+            <Button ClassId="button3" Text="Button 3" Clicked="Button_OnClicked" Margin="8,0"/>
+        </HorizontalStackLayout>
+        <Label Text="No button pressed" x:Name="uiLabel" HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
