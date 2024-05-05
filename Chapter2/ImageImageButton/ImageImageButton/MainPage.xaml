@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImageImageButton.MainPage">
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Image Source="dotnet_bot.png" WidthRequest="100" HeightRequest="100" />
+        <HorizontalStackLayout>
+            <ImageButton Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50"  
+                         Padding="8"
+                         Clicked="ImageButton_OnClicked"
+                                 BorderColor="Green" BorderWidth="2" CornerRadius="8"/>
+            <Label x:Name="uiLabel" Text="" VerticalOptions="Center" Margin="16,0"/>
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+
+</ContentPage>
