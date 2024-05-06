@@ -15,10 +15,22 @@
             </Label.GestureRecognizers>
         </Label>
         <Label Text="" Padding="8" TextColor="Red" x:Name="uiLabel2" />
-        <Image Source="dotnet_bot.png" WidthRequest="100" HeightRequest="100">
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LabelTappedCommand}" />
-            </Image.GestureRecognizers>
-        </Image>
+        <HorizontalStackLayout>
+            <Image Source="dotnet_bot.png" WidthRequest="100" HeightRequest="100" Margin="8,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" 
+                                          Command="{Binding ImageTappedCommand}"
+                                          CommandParameter="ImageClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="dotnet_bot.png" WidthRequest="100" HeightRequest="100" Margin="8,0" x:Name="image">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" 
+                                          Command="{Binding ImageTappedCommand}"
+                                          CommandParameter="Image2Clicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </HorizontalStackLayout>
+        <Label Text="" FontSize="Medium" x:Name="uiLabel3"/>
     </VerticalStackLayout>
 </ContentPage>
