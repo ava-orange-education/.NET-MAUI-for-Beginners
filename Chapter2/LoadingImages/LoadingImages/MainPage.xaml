@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoadingImages.MainPage">
+
+    <VerticalStackLayout Padding="8">
+        <Grid ColumnDefinitions="45*,10*,45*"
+              RowDefinitions="auto,auto,auto">
+            <Label Text="Loaded from a URL" Grid.Column="0" Grid.Row="0"
+                   VerticalOptions="Center" />
+            <Image Source="https://www.all-the-johnsons.co.uk/images/cub.png" HeightRequest="83" Grid.Row="0" Grid.Column="2" />
+            <Label Text="Click to load image from a stream" Grid.Row="1" Grid.Column="0"
+                   VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Image x:Name="sourceImage" Grid.Row="1" Grid.Column="2" WidthRequest="150" HeightRequest="150" />
+            <Label Text="Load a font icon" Grid.Column="0" Grid.Row="2"
+                   VerticalOptions="Center" />
+            <Image BackgroundColor="#D1D1D1" Grid.Row="2" Grid.Column="2"
+                   Source="{FontImage &#xf30c;, FontFamily=Ionicons, Size=44}" 
+                   HeightRequest="44" WidthRequest="100"/>
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>
