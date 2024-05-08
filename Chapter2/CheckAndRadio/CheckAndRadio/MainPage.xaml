@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckAndRadio.MainPage">
+
+    <VerticalStackLayout Padding="0">
+        <Label Text="Checkbox" FontSize="16"/>
+        <HorizontalStackLayout>
+            <Label Text="Click the checkbox" x:Name="uiLabel"/>
+            <CheckBox IsChecked="{Binding IsChecked}" CheckedChanged="CheckBox_OnCheckedChanged" />
+        </HorizontalStackLayout>
+        <Label Text="Non-grouped Radio Buttons" FontSize="16"/>
+        <HorizontalStackLayout>
+            <Label Text="Option 1 (on selected)" />
+            <RadioButton ClassId="Radio1" CheckedChanged="RadioButton_OnCheckedChanged" IsChecked="{Binding Radio1Selected}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Option 2 (off selected)" />
+            <RadioButton ClassId="Radio2" CheckedChanged="RadioButton_OnCheckedChanged" IsChecked="{Binding Radio2Selected}" />
+        </HorizontalStackLayout>
+        <Label Text="Grouped Radio Buttons" FontSize="16"/>
+        <HorizontalStackLayout>
+            <Label Text="Option 1" />
+            <RadioButton ClassId="Grp1" GroupName="options" CheckedChanged="RadioButton_OnCheckedChanged" IsChecked="true" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Option 2" />
+            <RadioButton ClassId="Grp2" GroupName="options" CheckedChanged="RadioButton_OnCheckedChanged" IsChecked="false" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Option 3" />
+            <RadioButton ClassId="Grp3" GroupName="options" CheckedChanged="RadioButton_OnCheckedChanged" IsChecked="false" />
+        </HorizontalStackLayout>
+        <Label x:Name="uiLabel2" Text="Option 1 selected" />
+    </VerticalStackLayout>
+
+</ContentPage>
