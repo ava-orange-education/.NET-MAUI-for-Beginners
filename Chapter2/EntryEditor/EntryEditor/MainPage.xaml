@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntryEditor.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="8">
+            <Label Text="Entry" />
+            <Entry ClassId="username" Placeholder="Enter some text" Text="{Binding User}" 
+                   MaxLength="15"
+                   Completed="Entry_OnCompleted" />
+            <Entry ClassId="password" Placeholder="Emter a password" IsPassword="true"
+                   MaxLength="10" Completed="Entry_OnCompleted" Text="{Binding Pass}"/>
+            <Label x:Name="uiLabel" Text="{Binding UserPass}" />
+            <Label Margin="0, 12" Text="Editor" />
+            <Editor Text="{Binding Lipsum}" Placeholder="Now empty" 
+                    Completed="Editor_OnCompleted" />
+            <Label Text="" x:Name="uiLabel2" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
