@@ -42,6 +42,5 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
     void Switch_OnToggled(object? sender, ToggledEventArgs e)
     {
         IsToggleOn = e.Value;
-        uiLabel.Text = IsToggleOn ? "On" : "Off";
     }
 }

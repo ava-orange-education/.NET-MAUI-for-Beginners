@@ -7,8 +7,8 @@
             <Label Text="Slider" />
             <HorizontalStackLayout>
                 <Slider Minimum="0" Maximum="100" MinimumTrackColor="Aqua" MaximumTrackColor="Blue"
-                         DragCompleted="Slider_OnDragCompleted" 
-                         Value="{Binding SlideValue}" 
+                         DragCompleted="Slider_OnDragCompleted"
+                         Value="{Binding SlideValue}"  
                          WidthRequest="300"/>
                 <Label Text="{Binding SlideValue}" Padding="8,0" />
             </HorizontalStackLayout>
@@ -21,7 +21,6 @@
                 <Label Text="An option" />
                 <Switch OnColor="Blue" Margin="8,0" Toggled="Switch_OnToggled"  
                         IsToggled="{Binding IsToggleOn }"/>
-                <Label Text="Off" Margin="8,0" x:Name="uiLabel" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
