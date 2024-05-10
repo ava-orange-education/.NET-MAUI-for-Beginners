@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SliderStepperSwitch.MainPage">
+
+        <VerticalStackLayout Padding="8">
+            <Label Text="Slider" />
+            <HorizontalStackLayout>
+                <Slider Minimum="0" Maximum="100" MinimumTrackColor="Aqua" MaximumTrackColor="Blue"
+                         DragCompleted="Slider_OnDragCompleted" 
+                         Value="{Binding SlideValue}" 
+                         WidthRequest="300"/>
+                <Label Text="{Binding SlideValue}" Padding="8,0" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Stepper Minimum="0" Maximum="35" Increment="5" Value="{Binding StepValue}" 
+                         ValueChanged="Stepper_OnValueChanged" HorizontalOptions="Fill"/>
+                <Label Text="{Binding StepValue}" Padding="8,0" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="An option" />
+                <Switch OnColor="Blue" Margin="8,0" Toggled="Switch_OnToggled"  
+                        IsToggled="{Binding IsToggleOn }"/>
+                <Label Text="Off" Margin="8,0" x:Name="uiLabel" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+</ContentPage>
