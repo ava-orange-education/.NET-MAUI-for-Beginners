@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindableLayout.MainPage">
+     <StackLayout Margin="20">
+            <StackLayout Spacing="20" 
+                         Orientation="Horizontal">
+                <Image Source="newpfj.png"
+                       Aspect="AspectFill" 
+                       WidthRequest="104" 
+                       HeightRequest="104" />
+                    <StackLayout Spacing="5" 
+                                 Margin="0,10,0,0">
+                    <Label Text="{Binding Detials.Name}" 
+                           TextColor="#303030" 
+                           FontSize="12" 
+                           FontAttributes="Bold" 
+                           HeightRequest="40" 
+                           VerticalTextAlignment="Center" />
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Furry things"
+                   Margin="0,20,0,0" />
+            <StackLayout BindableLayout.ItemsSource="{Binding Detials.AvatarPics}"
+                         Orientation="Horizontal"
+                         Margin="13,10,0,0">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}"
+                               Aspect="AspectFill"
+                               WidthRequest="44"
+                               HeightRequest="44"
+                               Margin="5,0,0,0" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+            <Label Text="Friends"
+                   Margin="0,10,0,0" />
+            <StackLayout Orientation="Horizontal"
+                         BindableLayout.ItemsSource="{Binding Detials.RandomInfo}"
+                         Margin="10" Padding="10" />
+           
+        </StackLayout>
+</ContentPage>
