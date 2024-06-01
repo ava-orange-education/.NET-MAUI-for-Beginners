@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AddingSQLite.Views.MainPage"
+             xmlns:viewmodel="clr-namespace:AddingSQLite.ViewModels">
+    <ContentPage.BindingContext>
+        <viewmodel:FirstViewModel x:Name="ViewModel" />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="50*,50*" RowSpacing="12" Padding="12">
+        <VerticalStackLayout Grid.Row="0" Padding="0,12">
+            <Label Text="Data entry" FontSize="Large" TextColor="Blue" />
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Record Number : " />
+                <Label Text="{Binding DbCount}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Padding="0,12">
+                <Label Text="User name" VerticalTextAlignment="Center"/>
+                <Editor Text="{Binding UserName}" MaxLength="50" WidthRequest="200"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Padding="0,12">
+                <Label Text="Random information" VerticalTextAlignment="Center"/>
+                <Editor Text="{Binding RandomInformation}" MaxLength="100" WidthRequest="200" />
+            </HorizontalStackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="End">
+                <Button Text="Add to database" Command="{Binding StoreDataCommand}" />
+            </StackLayout>
+        </VerticalStackLayout>
+        <CollectionView ItemsSource="{Binding DataModel}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Padding="0,12">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Dataname " />
+                                <Label Text="{Binding DataName}" TextColor="Chocolate" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Random " />
+                                <Label Text="{Binding DataInformation}" TextColor="Chocolate" />
+                            </HorizontalStackLayout>
+                            <Label Text="Record ID " />
+                            <Label Text="{Binding Id}" TextColor="Orchid" />
+                        </VerticalStackLayout>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
