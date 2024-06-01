@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsingMessages.Views.SecondPage"
+             xmlns:viewmodel="clr-namespace:UsingMessages.ViewModels">
+    <ContentPage.BindingContext>
+        <viewmodel:SecondViewModel x:Name="ViewModel" />
+    </ContentPage.BindingContext>
+    <StackLayout Padding="12" VerticalOptions="Center">
+        <Grid ColumnDefinitions="35*,*" RowDefinitions="auto,auto,auto,auto" RowSpacing="12" ColumnSpacing="12">
+            <Label Text="Bus make" Grid.Column="0" Grid.Row="0" />
+            <Label Text="{Binding BusMake}" 
+                   Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Number of Seats" Grid.Column="0" Grid.Row="1" />
+            <Label Text="{Binding NumberOfSeats}" 
+                   Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Engine Size" Grid.Column="0" Grid.Row="2" />
+            <Label Text="{Binding EngineLitres}" 
+                   Grid.Row="2" Grid.Column="1"/>
+            <Label Text="Engine Running" Grid.Column="0" Grid.Row="3" />
+            <CheckBox IsChecked="{Binding EngineRunning}" IsEnabled="False"
+                      Grid.Column="1" Grid.Row="3" />
+        </Grid>
+    </StackLayout>
+</ContentPage>
