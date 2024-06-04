@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AddingSQLiteToExistingApp.Views.MainPage"
+             xmlns:viewmodel="clr-namespace:AddingSQLiteToExistingApp.ViewModels">
+    <ContentPage.BindingContext>
+        <viewmodel:FirstViewModel x:Name="ViewModel" />
+    </ContentPage.BindingContext>
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <VerticalStackLayout Padding="8" VerticalOptions="Start">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Order by" Grid.Column="0" VerticalTextAlignment="Center"/>
+                <Picker ItemsSource="{Binding OrderByOptions}"  SelectedIndex="{Binding option}"
+                        SelectedIndexChanged="Picker_OnSelectedIndexChanged"
+                        WidthRequest="200" Grid.Column="1" x:Name="picker" VerticalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+            <CollectionView ItemsSource="{Binding RouteInformation}"
+                        x:Name="routeview" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <Frame CornerRadius="8" BorderColor="LightBlue" Padding="0,4">
+                                <Grid ColumnDefinitions="20*,80*">
+                                    <VerticalStackLayout VerticalOptions="Center" Grid.Column="0">
+                                        <Image HorizontalOptions="Center" x:Name="image"
+                                               HeightRequest="84" WidthRequest="84">
+                                            <Image.Source>
+                                                <FileImageSource File="{Binding BusOperateLogo}" />
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Text="{Binding BusOperatorName}" HorizontalOptions="Center" />
+                                    </VerticalStackLayout>
+                                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Start">
+                                        <Grid ColumnDefinitions="auto,auto, *" Grid.RowDefinitions="auto, auto,auto,auto,auto">
+                                            <Label Text="Route number" Grid.Column="0" Grid.Row="0" WidthRequest="100"/>
+                                            <Label Text="{Binding RouteNumber}" Grid.Column="1" Grid.Row="0"/>
+                                            <Label Text="From" Grid.Column="0" Grid.Row="1"/>
+                                            <Label Text="{Binding From}" Grid.Column="1" Grid.Row="1"/>
+                                            <Label Text="Destination" Grid.Column="0" Grid.Row="2" />
+                                            <Label Text="{Binding Destination}" Grid.Column="1" Grid.Row="2"/>
+                                            <Label Text="Frequency" Grid.Column="0" Grid.Row="3"/>
+                                            <HorizontalStackLayout Grid.Column="1" Grid.Row="3">
+                                                <Label Text="{Binding RouteInterval}" />
+                                                <Label Text="  mins" />
+                                            </HorizontalStackLayout>
+                                            <Grid ColumnDefinitions="33*, 33*, 34*" Grid.Column="1" 
+                                                  Grid.Row="4">
+                                                <HorizontalStackLayout Grid.Column="0">
+                                                    <Label Text="M - F" VerticalTextAlignment="Center" />
+                                                    <CheckBox IsChecked="{Binding MonToFri}" IsEnabled="False"/>
+                                                </HorizontalStackLayout>
+                                                <HorizontalStackLayout Grid.Column="1">
+                                                    <Label Text="Sat" VerticalTextAlignment="Center"/>
+                                                    <CheckBox IsChecked="{Binding Sat}" IsEnabled="False"/>
+                                                </HorizontalStackLayout>
+                                                <HorizontalStackLayout Grid.Column="2">
+                                                    <Label Text="Sun" VerticalTextAlignment="Center"/>
+                                                    <CheckBox IsChecked="{Binding Sun}" IsEnabled="False"/>
+                                                </HorizontalStackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
