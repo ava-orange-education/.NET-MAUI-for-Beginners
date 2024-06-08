@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.34929.205
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoringComplexTypes", "StoringComplexTypes\StoringComplexTypes.csproj", "{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5B6AA0-0663-470D-9A83-C9E42270A2A6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F257F78-7E52-4E25-9337-49DF6DE805BF}
+	EndGlobalSection
+EndGlobal
