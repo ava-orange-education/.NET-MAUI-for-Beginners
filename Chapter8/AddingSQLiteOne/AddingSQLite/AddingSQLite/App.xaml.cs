@@ -17,9 +17,6 @@ public partial class App : Application
     // SQLiteAsyncConnection string
     public static SQLiteAsyncConnection SQLConnection { get; set; }
     
-    // Database GUID for secure DB
-    static string DBGuid { get; set; } = "abc099d39b6f4c91a5067c27560a844b";
-    
     public App()
     {
         Service = Startup.Init();
@@ -37,13 +34,11 @@ public partial class App : Application
     void SetupSQLiteConnection()
     {
         var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-        path = Path.Combine(path, "addsqlite.db3");
+        path = Path.Combine(path, "addsqlite.db");
 
-        var options = new SQLiteConnectionString(path, SQLiteOpenFlags.Create | 
-                                                       SQLiteOpenFlags.ReadWrite, true, DBGuid);
         try
         {
-            App.SQLConnection = new SQLiteAsyncConnection(options);
+            App.SQLConnection = new SQLiteAsyncConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
         }
         catch (Exception ex)
         {
