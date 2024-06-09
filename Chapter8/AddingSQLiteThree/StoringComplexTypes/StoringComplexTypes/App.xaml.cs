@@ -16,9 +16,6 @@ namespace StoringComplexTypes
         // SQLiteAsyncConnection string
         public static SQLiteAsyncConnection SQLConnection { get; set; }
 
-        // Database GUID for secure DB
-        static string DBGuid { get; set; } = "abc099d39b6f4c91a5067c27560a844b";
-
         public App()
         {
             Service = Startup.Init();
@@ -34,22 +31,19 @@ namespace StoringComplexTypes
         }
 
         void SetupSQLiteConnection()
-        {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            path = Path.Combine(path, "addsqlite.db3");
+    {
+        var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        path = Path.Combine(path, "addsqlite.db");
 
-            var options = new SQLiteConnectionString(path, SQLiteOpenFlags.Create |
-                                                           SQLiteOpenFlags.ReadWrite, true, DBGuid);
-            try
-            {
-                App.SQLConnection = new SQLiteAsyncConnection(options);
-            }
-            catch (Exception ex)
-            {
+        try
+        {
+            App.SQLConnection = new SQLiteAsyncConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
+        }
+        catch (Exception ex)
+        {
 #if DEBUG
-                Console.WriteLine($"Connection could  not be made : ex.Message = {ex.Message} - inner = {ex.InnerException?.Message}");
+            Console.WriteLine($"Connection could  not be made : ex.Message = {ex.Message} - inner = {ex.InnerException?.Message}");
 #endif
-            }
         }
     }
 }
