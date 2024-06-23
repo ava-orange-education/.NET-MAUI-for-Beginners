@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel = "clr-namespace:ReadPDF.ViewModels"
+             x:Class="ReadPDF.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:PDFReaderViewModel x:Name="ViewModel" />
+    </ContentPage.BindingContext>
+    
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="12"
+          RowDefinitions="50,*">
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="Route number" FontSize="14" VerticalTextAlignment="Center" />
+            <Picker ItemsSource="{Binding Routes}" WidthRequest="200"
+                    SelectedIndexChanged="Picker_OnSelectedIndexChanged" x:Name="picker"/>
+        </HorizontalStackLayout>
+        <WebView x:Name="pdfview" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                 Grid.Row="1" Source="{Binding SelectedRoute}"/>
+    </Grid>
+
+</ContentPage>
