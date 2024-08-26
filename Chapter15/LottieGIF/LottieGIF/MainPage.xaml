@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="LottieGIF.MainPage">
+
+    <Grid ColumnSpacing="8" ColumnDefinitions="50*,50*" RowSpacing="8" RowDefinitions="auto,auto">
+        <Label Text="Animated Gif" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" />
+        <Image Source="virus60.gif" 
+               HeightRequest="250" WidthRequest="250"
+               HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" IsAnimationPlaying="True" />
+        <Label Text="Lottie animation" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" />
+        <skia:SKLottieView Source="virus60.json" HeightRequest="250" 
+                       WidthRequest="250" RepeatCount="-1" 
+                       IsAnimationEnabled="True" HorizontalOptions="Center"
+                       VerticalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+</ContentPage>
